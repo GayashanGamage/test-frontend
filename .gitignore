@@ -30,6 +30,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-jsconfig.json
-package.json
-package-lock.json
