@@ -1,25 +1,34 @@
 <template>
   <div class="level-one-container">
-    <p>main page</p>
-    <input type="text" placeholder="First Name" v-model="firstName" /><br />
-    <input type="text" placeholder="Last Name" v-model="lastName" /><br />
-    <input type="password" v-model="pw" /><br />
-    <button @click="clicked">Add user</button>
-    <button @click="save">save</button>
-    <div v-for="(item, index) in users" :key="item['_id']" class="user-detials">
-      <p>first name {{ item["first name"] }}</p>
-      <p>last name {{ item["last name"] }}</p>
-      <p>password {{ item["password"] }}</p>
-      <button @click="deleteItem(item['_id'])">Delete</button>
-      <button @click="popup_open(index, item['_id'])">Edit</button>
+    <div class="level-two-container">
+      <MenuBar></MenuBar>
     </div>
-    <div class="popup">
-      <div class="popup-container">
-        <input type="text" id="fname" v-model="selectItem['first name']" />
-        <input type="text" id="lname" v-model="selectItem['last name']" />
-        <input type="text" id="pw" v-model="selectItem['password']" />
-        <button @click="save">Save</button>
-        <button @click="popup_close">Cancel</button>
+    <div class="level-two-container">
+      <p>main page</p>
+      <input type="text" placeholder="First Name" v-model="firstName" /><br />
+      <input type="text" placeholder="Last Name" v-model="lastName" /><br />
+      <input type="password" v-model="pw" /><br />
+      <button @click="clicked">Add user</button>
+      <button @click="save">save</button>
+      <div
+        v-for="(item, index) in users"
+        :key="item['_id']"
+        class="user-detials"
+      >
+        <p>first name {{ item["first name"] }}</p>
+        <p>last name {{ item["last name"] }}</p>
+        <p>password {{ item["password"] }}</p>
+        <button @click="deleteItem(item['_id'])">Delete</button>
+        <button @click="popup_open(index, item['_id'])">Edit</button>
+      </div>
+      <div class="popup">
+        <div class="popup-container">
+          <input type="text" id="fname" v-model="selectItem['first name']" />
+          <input type="text" id="lname" v-model="selectItem['last name']" />
+          <input type="text" id="pw" v-model="selectItem['password']" />
+          <button @click="save">Save</button>
+          <button @click="popup_close">Cancel</button>
+        </div>
       </div>
     </div>
   </div>
@@ -27,6 +36,7 @@
 
 <script setup>
 name: "App";
+import MenuBar from "@/components/MenuBar.vue";
 import axios from "axios";
 import { onBeforeMount, onBeforeUpdate, ref } from "vue";
 

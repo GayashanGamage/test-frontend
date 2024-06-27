@@ -1,27 +1,29 @@
 <template>
   <div class="level-one-container">
-    <input type="text" v-model="users['fname']" /><br />
-    <!-- <input type="text" :value="users['lname']" /> -->
-    <p>{{ users["fname"] }}</p>
-    <button @click="show">Show values</button>
+    <div class="level-two-container">
+      <MenuBar></MenuBar>
+    </div>
+    <div class="level-two-container"></div>
+    <p>plaform js testing</p>
+    <p>{{ name }}</p>
+    <p>{{ version }}</p>
+    <p>{{ os_family }}</p>
+    <p>{{ os_version }}</p>
+    <p>{{ hardware_arch }}</p>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import MenuBar from "@/components/MenuBar.vue";
+import platform from "platform";
 name: "Test";
 
-// const users = ref("chami");
-
-const users = ref({ fname: "chami", lname: "senanayake" });
-// const users = ref({
-//   fname: ref("chami"),
-//   lname: ref("senanayake"),
-// });
-
-const show = () => {
-  console.log(users.value);
-};
+const name = platform.name;
+const version = platform.version;
+const os_family = platform.os.family;
+const os_version = platform.os.version;
+const hardware_arch = platform.os.architecture;
+console.log(platform.layout);
 </script>
 
 <style scoped></style>
