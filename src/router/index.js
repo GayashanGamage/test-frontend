@@ -4,6 +4,7 @@ import Main from "@/views/Main.vue";
 import Members from "@/views/Members.vue";
 import Storage from "@/views/Storage.vue";
 import Test from "@/views/Test.vue";
+import Toast from "@/views/Toast.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -20,6 +21,10 @@ const router = createRouter({
     {
       path: "/storage",
       component: Storage,
+    },
+    {
+      path: "/toast",
+      component: Toast,
     },
     {
       path: "/member",

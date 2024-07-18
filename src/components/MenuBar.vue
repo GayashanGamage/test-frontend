@@ -8,6 +8,9 @@
       <li class="menu-item">
         <router-link to="/storage">Storage</router-link>
       </li>
+      <li class="menu-item">
+        <router-link to="/toast">Toast</router-link>
+      </li>
       <li class="menu-item login">
         <router-link to="/member">Login</router-link>
       </li>
