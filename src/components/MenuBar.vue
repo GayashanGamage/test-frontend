@@ -5,8 +5,11 @@
       <li class="menu-item">
         <router-link to="/test">Platform</router-link>
       </li>
+      <li class="menu-item">
+        <router-link to="/storage">Storage</router-link>
+      </li>
       <li class="menu-item login">
-        <router-link to="/login">Login</router-link>
+        <router-link to="/member">Login</router-link>
       </li>
     </ul>
   </div>
